@@ -3,6 +3,9 @@ class Calculadora:
         self.numero1 = numero1
         self.numero2 = numero2
         self.texto_tabla = ""
+        self.fecha = None  # Inicializar fecha como None
+
+    #-------------------------HACER OPERACIONES-------------------------#
 
     def suma(self):
         return self.numero1.get_numero() + self.numero2.get_numero()
@@ -21,10 +24,11 @@ class Calculadora:
         
             
     def mostrar_info(self):
-        print(f"Numero 1: {self.numero1}")
-        print(f"Numero 2: {self.numero2}")
-    #-------------------------HACER OPERACIONES-------------------------#
+        print(f"Número 1: {self.numero1.get_numero()}")
+        print(f"Número 2: {self.numero2.get_numero()}")
     
+    #-------------------------TOMAR FECHA-------------------------#
+
     def tomar_fecha(self, fecha):
         self.fecha = fecha  
         
@@ -34,14 +38,14 @@ class Calculadora:
     def mostrar_fecha(self):
         print(f"Fecha: {self.fecha}")
         
-    #-------------------------TOMAR FECHA-------------------------#
+    #====================TABLA PARA ALMACENAR DATOS DE USUARIO=========================#
     
     def acumulador_texto(self, obj_usuario):
         self.texto_tabla += f"     - Identificacion: {obj_usuario.id}\n"
         self.texto_tabla +=f"      - Usuario: {obj_usuario.nombre}\n" 
         
     def get_tabla(self):
-        return self.tabla   
+        return self.texto_tabla  
     
     def mostrar_tabla(self):    
         print("             |Historial almacenado|         ")

@@ -81,12 +81,20 @@ def guardar_e_imprimir():
 # INTERFAZ GRAFICA ACA MOSTRAMOS LOS TEXTOS VISUALES
 # ===============================
 
+
+"""SE CREA DE ESTA FORMA LA INTERFAZ GRAFICA - SE VISUALIZA EL TITULO DE LA VENTANA"""
 ventana = tk.Tk()
 ventana.title("Calculadora con Historial")
 ventana.geometry("500x600")
 
+"""SE CREA UN TITULO OSEA UN H1"""
 tk.Label(ventana, text="CALCULADORA + TOMA DE INFORMACION", font=("Arial", 14, "bold")).pack(pady=10)
 
+# ===============================
+# ACA ESTAMOS CREANDO EL FORMULARIO CON SUS RESPECTIVOS INPUTS
+# ===============================
+
+"""SE CREA UN LABEL Y UN ENTRY"""
 tk.Label(ventana,text="Nombre").pack()
 entry_nombre = tk.Entry(ventana)
 entry_nombre.pack()
