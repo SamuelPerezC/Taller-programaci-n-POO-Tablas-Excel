@@ -11,7 +11,7 @@ class parqueadero:
         self.hora_salida = None
         self.estado = "DISPONIBLE"  # DISPONIBLE u OCUPADO
     
-    # --- GETTERS Y SETTERS (lo que están aprendiendo) ---
+    # --- GETTERS Y SETTERS  ---
     
     def get_numero_puesto(self):
         return self.numero_puesto
@@ -67,21 +67,21 @@ class parqueadero:
         self.set_hora_entrada(ahora.strftime("%H:%M:%S"))
         self.set_estado("OCUPADO")
         
-        print(f"\n✅ Entrada registrada en el puesto {self.get_numero_puesto()}")
+        print(f"\n Entrada registrada en el puesto {self.get_numero_puesto()}")
         print(f"   Fecha: {self.get_fecha_entrada()}")
         print(f"   Hora: {self.get_hora_entrada()}")
     
     def registrar_salida(self):
         """Registra la salida de un vehículo"""
         if self.get_estado() == "DISPONIBLE":
-            print(f"\n❌ El puesto {self.get_numero_puesto()} ya está disponible")
+            print(f"\n El puesto {self.get_numero_puesto()} ya está disponible")
             return
         
         ahora = datetime.datetime.now()
         self.set_hora_salida(ahora.strftime("%H:%M:%S"))
         self.set_estado("DISPONIBLE")
         
-        print(f"\n✅ Salida registrada del puesto {self.get_numero_puesto()}")
+        print(f"\n Salida registrada del puesto {self.get_numero_puesto()}")
         print(f"   Hora de salida: {self.get_hora_salida()}")
         self.mostrar_tiempo_parqueo()
     
@@ -91,23 +91,23 @@ class parqueadero:
         print(f"INFORMACIÓN DEL PUESTO {self.get_numero_puesto()}")
         print("="*50)
         
-        print(f"📌 Estado: {self.get_estado()}")
+        print(f" Estado: {self.get_estado()}")
         
         if self.get_estado() == "OCUPADO" and self.get_usuario() and self.get_carro():
             usuario = self.get_usuario()
             carro = self.get_carro()
             
-            print("\n👤 USUARIO:")
+            print("\n USUARIO:")
             print(f"   Nombre: {usuario.get_nombre()}")
             print(f"   Cédula: {usuario.get_cedula()}")
             print(f"   Tipo: {usuario.get_tipo()}")
             
-            print("\n🚗 VEHÍCULO:")
+            print("\n VEHÍCULO:")
             print(f"   Placa: {carro.get_placa_vehiculo()}")
             print(f"   Tipo: {carro.get_tipo_carro()}")
             print(f"   Color: {carro.get_color_carro()}")
             
-            print("\n⏱️  TIEMPOS:")
+            print("\n  TIEMPOS:")
             print(f"   Entrada: {self.get_fecha_entrada()} - {self.get_hora_entrada()}")
             if self.get_hora_salida():
                 print(f"   Salida: {self.get_hora_salida()}")
@@ -132,11 +132,11 @@ class parqueadero:
             minutos = int(tiempo.total_seconds() / 60)
             
             if minutos < 60:
-                print(f"⏱️  Tiempo total: {minutos} minutos")
+                print(f"  Tiempo total: {minutos} minutos")
             else:
                 horas = minutos // 60
                 mins = minutos % 60
-                print(f"⏱️  Tiempo total: {horas} horas y {mins} minutos")
+                print(f"  Tiempo total: {horas} horas y {mins} minutos")
     
     def esta_disponible(self):
         """Retorna True si el puesto está disponible"""

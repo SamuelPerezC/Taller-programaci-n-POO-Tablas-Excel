@@ -8,10 +8,18 @@ import datetime
 # Crear ventana
 ventana = tk.Tk()
 ventana.title("Sistema de Parqueadero")
-ventana.geometry("450x650")  # Un poco más grande para más campos
+ventana.geometry("1366x768")  
 
 # Crear objeto de parqueadero
-mi_parqueadero = parqueadero("A1")
+mi_parqueadero = parqueadero("1")
+
+
+#  Entradas = Campos donde el usuario ESCRIBE
+# entry_nombre      El usuario escribe aquí
+# entry_cedula      El usuario escribe aquí
+# entry_placa       El usuario escribe aquí
+
+
 
 # FUNCIÓN PARA REGISTRAR ENTRADA
 def registrar_entrada():
@@ -45,6 +53,12 @@ def registrar_entrada():
     
     messagebox.showinfo("Éxito", "Entrada registrada correctamente")
 
+
+#  Salidas = Lugares donde se MUESTRA información
+# entry_estado      Muestra estado (no se escribe)
+# texto_info        Muestra información detallada
+
+
 # FUNCIÓN PARA REGISTRAR SALIDA
 def registrar_salida():
     if mi_parqueadero.esta_disponible():
@@ -75,12 +89,10 @@ def mostrar_info_completa():
     # Limpiar área de texto
     texto_info.delete(1.0, tk.END)
     
-    # Mostrar información del puesto
-    texto_info.insert(tk.END, "="*50 + "\n")
-    texto_info.insert(tk.END, f"INFORMACIÓN DEL PUESTO {mi_parqueadero.get_numero_puesto()}\n")
-    texto_info.insert(tk.END, "="*50 + "\n")
+    # Mostrar información TIPO LISTA
     
-    texto_info.insert(tk.END, f"📌 Estado: {mi_parqueadero.get_estado()}\n")
+    # preguntar al profesor
+
     
     # Si está ocupado, mostrar información detallada
     if mi_parqueadero.get_estado() == "OCUPADO":
@@ -182,7 +194,7 @@ btn_actualizar = tk.Button(frame_botones, text="ACTUALIZAR",
                           bg="blue", fg="white", width=15)
 btn_actualizar.pack(side="left", padx=5)
 
-#AREA DE TABLAS EN LABELFRAME PAR QUE QUEDE AGRUPADO VISUALMENTE
+#AREA DE TABLAS EN LABEL-FRAME PAR QUE QUEDE AGRUPADO VISUALMENTE
 frame_info = tk.LabelFrame(ventana, text="Información Detallada", padx=10, pady=10)
 frame_info.pack(padx=20, pady=10, fill="both", expand=True)
 
