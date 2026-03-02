@@ -1,6 +1,0 @@
-las instancias de los objetos, vienen siendo las entidades de las bases de datos
-
-
-estudiar: parametros o atributos(adjetivos), argumentos, retornos y responsabilidades(que son los metodos, que usamos verbos), ESTUDIAR: PARAMETROS, RETORNOS Y ARGUMENTOS
-metodos publicos y privados estudiar
-
